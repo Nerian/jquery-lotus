@@ -1,6 +1,6 @@
-# jquery-lotus
+# jquery-hanami
 
-Jquery for Lotus.
+Jquery for Hanami.
 
 This gem provides:
 
@@ -11,7 +11,7 @@ This gem provides:
 
 Add to Gemfile.
 ```
-gem 'jquery-lotus'
+gem 'jquery-hanami'
 ```
 
 Add to our tenmplate:
@@ -28,4 +28,4 @@ optionally:
 
 ## License
 
-jquery-lotus is released under the [MIT License](MIT-LICENSE).
+jquery-hanami is released under the [MIT License](MIT-LICENSE).

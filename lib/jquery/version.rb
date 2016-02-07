@@ -1,5 +1,5 @@
 module Jquery
-  module Lotus
+  module Hanami
     VERSION = "0.0.1"
     JQUERY_VERSION = "1.11.3"
     JQUERY_2_VERSION = "2.1.4"
