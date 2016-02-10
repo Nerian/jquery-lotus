@@ -11,10 +11,10 @@ task :guard_version do
     body = File.read("vendor/assets/javascripts/#{file}")
     match = body.match(pattern) or abort "Version check failed: no pattern matched in #{file}"
     file_version = match[1]
-    constant_version = Jquery::Lotus.const_get(constant)
+    constant_version = Jquery::Hanami.const_get(constant)
 
     unless constant_version == file_version
-      abort "Jquery::Lotus::#{constant} was #{constant_version} but it should be #{file_version}"
+      abort "Jquery::Hanami::#{constant} was #{constant_version} but it should be #{file_version}"
     end
   end
 
@@ -35,14 +35,14 @@ task :update_jquery do
     puts `curl -o vendor/assets/javascripts/#{filename}.min.map http://code.jquery.com/jquery#{suffix}.min.map`
   end
 
-  download_jquery('jquery', Jquery::Lotus::JQUERY_VERSION)
-  download_jquery('jquery2', Jquery::Lotus::JQUERY_2_VERSION)
+  download_jquery('jquery', Jquery::Hanami::JQUERY_VERSION)
+  download_jquery('jquery2', Jquery::Hanami::JQUERY_2_VERSION)
   puts "\e[32mDone!\e[0m"
 end
 
 desc "Update jQuery UJS version"
 task :update_jquery_ujs do
   puts "Downloading jquery_ujs.js"
-  puts `curl -o vendor/assets/javascripts/jquery_ujs.js https://raw.githubusercontent.com/rails/jquery-ujs/v#{Jquery::Lotus::JQUERY_UJS_VERSION}/src/rails.js`
+  puts `curl -o vendor/assets/javascripts/jquery_ujs.js https://raw.githubusercontent.com/rails/jquery-ujs/v#{Jquery::Hanami::JQUERY_UJS_VERSION}/src/rails.js`
   puts "\e[32mDone!\e[0m"
 end

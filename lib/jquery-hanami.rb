@@ -1,10 +1,10 @@
 require 'jquery/version'
 
 module Jquery
-  module Lotus
+  module Hanami
     class << self
       def load!
-        ::Lotus::Assets.sources << assets_path
+        ::Hanami::Assets.sources << assets_path
       end
 
       def gem_path
@@ -18,4 +18,4 @@ module Jquery
   end
 end
 
-Jquery::Lotus.load!
+Jquery::Hanami.load!
